@@ -101,6 +101,10 @@ async function seedRevenue() {
   return insertedRevenue;
 }
 
+/**
+ * 初始化调用SQL写入数据
+ * @constructor
+ */
 export async function GET() {
   try {
     const result = await sql.begin((sql) => [
