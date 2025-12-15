@@ -7,7 +7,6 @@ import { inter } from "@/app/ui/fonts"
  * @constructor
  */
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-	console.log('刷新了嘛')
 	return (
 		<html lang="en">
 			<body className={ `${ inter.className } antialiased` }>{ children }</body>
