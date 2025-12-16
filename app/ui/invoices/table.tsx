@@ -4,6 +4,8 @@ import InvoiceStatus from '@/app/ui/invoices/status';
 import { formatDateToLocal, formatCurrency } from '@/app/lib/utils';
 import { fetchFilteredInvoices } from '@/app/lib/data';
 
+let queryCount = 0;
+
 export default async function InvoicesTable({
   query,
   currentPage,
@@ -11,7 +13,12 @@ export default async function InvoicesTable({
   query: string;
   currentPage: number;
 }) {
+
+  queryCount++;
+
   const invoices = await fetchFilteredInvoices(query, currentPage);
+
+  console.log(`🎯 第 ${queryCount} 次执行SQL查询`);
 
   return (
     <div className="mt-6 flow-root">
